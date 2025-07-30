@@ -1,0 +1,21 @@
+# Secrets and environment files
+.secrets
+.env
+.env.local
+
+# macOS
+.DS_Store
+
+# ACT logs
+act.log
+
+# Node modules (if you add JavaScript actions later)
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log

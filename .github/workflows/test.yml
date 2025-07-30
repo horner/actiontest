@@ -1,0 +1,20 @@
+name: Test Local Action
+
+on: [push, workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    env:
+      PROXMOX_PASSWORD: ${{ secrets.PROXMOX_PASSWORD }}
+      PROXMOX_USERNAME: demouser
+      CONTAINER_PASSWORD: ${{ secrets.CONTAINER_PASSWORD }}
+      LINUX_DISTRIBUTION: rocky
+      GITHUB_PAT: ${{ secrets.GH_PAT }}
+      CREATE_RUNNER_JOB: y
+    
+    steps:
+   
+    - name: Setup runner
+      uses: ./myaction

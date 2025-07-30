@@ -1,0 +1,31 @@
+name: 'Setup Runner'
+description: 'Sets up a self-hosted runner with heavy lifting'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup runner environment
+      shell: bash
+      run: |
+        echo "Dumping ENV:"
+        env
+        echo "----Dump complete----"
+        echo "🚀 Setting up runner..."
+        echo "Repository: $GITHUB_REPOSITORY"
+        echo "Branch: $GITHUB_REF_NAME"
+        echo "Event: $GITHUB_EVENT_NAME"
+        echo "Distribution: $LINUX_DISTRIBUTION"
+        echo "Username: $PROXMOX_USERNAME"
+        echo "Create job: $CREATE_RUNNER_JOB"
+        
+        # GitHub context is automatically available
+        echo "GitHub Actor: $GITHUB_ACTOR"
+        echo "Workflow: $GITHUB_WORKFLOW"
+        
+        # Heavy lifting would go here:
+        # - Download runner binaries
+        # - Configure Proxmox
+        # - Setup container
+        # - Register runner
+        
+        echo "✅ Runner setup complete!"

@@ -1,0 +1,16 @@
+# ACT Configuration File
+# This file configures default settings for ACT
+
+# Use a smaller, faster Docker image for testing
+-P ubuntu-latest=catthehacker/ubuntu:act-latest
+-P ubuntu-20.04=catthehacker/ubuntu:act-20.04
+-P ubuntu-18.04=catthehacker/ubuntu:act-18.04
+
+# Default platform
+--platform ubuntu-latest=catthehacker/ubuntu:act-latest
+
+# Verbose output by default (comment out if you want less output)
+# -v
+
+# Reuse containers for faster subsequent runs
+--reuse
