@@ -15,6 +15,15 @@ jobs:
       CREATE_RUNNER_JOB: y
     
     steps:
+    - uses: actions/checkout@v3
+    
+    - name: Debug - List files
+      run: |
+        echo "Current directory: $(pwd)"
+        echo "Files in current directory:"
+        ls -la
+        echo "Files in myaction directory:"
+        ls -la myaction/ || echo "myaction directory not found"
    
     - name: Setup runner
       uses: ./myaction
